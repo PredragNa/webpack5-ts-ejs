@@ -1,0 +1,19 @@
+{
+  "name": "webpack5-ts-ejs",
+  "version": "1.0.0",
+  "description": "Webpack5 TypeScript EJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PredragNa/webpack5-ts-ejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PredragNa/webpack5-ts-ejs/issues"
+  },
+  "homepage": "https://github.com/PredragNa/webpack5-ts-ejs#readme"
+}

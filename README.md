@@ -1,2 +1,4 @@
-# webpack5-ts-ejs
-Webpack 5 + TS + EJS
+# Webpack 5 TypeScript EJS starter
+
+## Steps
+1. `npm init` - create package json
