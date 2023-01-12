@@ -3,4 +3,5 @@
 ## Steps
 1. `npm init` - create package json
 2. add .gitignore file to prevent tracking files we don't want such as files from node_modules folder
-3. 
+3. add .editorconfig file [editorconfig](https://editorconfig.org/)
+4. 
