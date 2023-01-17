@@ -110,11 +110,38 @@ module.exports = (env) => {
     ],
   };
 
+  // Images
+  const images = {
+    test: /\.(gif|png|jpe?g|svg)$/i,
+    type: 'asset/resource',
+    exclude: [/content/, /favicon/],
+  };
+
+  // content Images
+  const contentImages = {
+    test: /\.(gif|png|jpe?g|svg)$/i,
+    type: 'asset/resource',
+    include: [path.join(__dirname, '../src/img/content/')],
+    generator: {
+      filename: isProduction ? '[path][name][ext]' : 'img/[name].[contenthash][ext]',
+    },
+  };
+
+  // Fonts
+  const fonts = {
+    test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+    type: 'asset/resource',
+    include: [path.join(__dirname, '../src/fonts/**/*')],
+  };
+
   return [
     typescript,
     js,
     html,
     sass,
     css,
+    images,
+    contentImages,
+    (isProduction ? null : fonts),
   ].filter(Boolean);
 };

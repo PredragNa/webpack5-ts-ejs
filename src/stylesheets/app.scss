@@ -1,3 +1,6 @@
+@import "./base/base.scss";
+@import "./components/components.scss";
+
 $colorNeutralLightest: #fff;
 $colorNeutralDarkest: #000;
 
@@ -8,4 +11,5 @@ h2,
 h3 {
   color: $colorBrand;
   margin-bottom: 0;
+  font-family: $fontFamilyBase;
 }

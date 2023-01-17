@@ -4,6 +4,7 @@ const glob = require('glob');
 
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = (env) => {
   const isProduction = env.production;
@@ -29,8 +30,32 @@ module.exports = (env) => {
     filename: isProduction ? 'assets/css/app.css' : 'app.[contenthash].css',
   });
 
+  /**
+ * Static files required by BE
+ */
+  const copyAssets = new CopyPlugin({
+    patterns: [
+      // Copy all fonts
+      {
+        from: path.resolve(__dirname, '../src/fonts'),
+        to: path.join(__dirname, '../dist/assets/fonts'),
+      },
+      // Copy all images for production
+      {
+        from: path.resolve(__dirname, '../src/img'),
+        to: path.join(__dirname, '../dist/assets/img'),
+        globOptions: {
+          ignore: [
+            '**/img/content/**',
+          ]
+        }
+      },
+    ],
+  });
+
   return [
     ...(generateHTMLPlugins()),
     css,
+    // copyAssets,
   ].filter(Boolean);
 };

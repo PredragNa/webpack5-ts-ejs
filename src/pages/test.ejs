@@ -9,7 +9,7 @@
 <html lang="en">
 <!--<![endif]-->
 
-<%- include('/partials/layout/_head.ejs', { title: 'Index page'}) %>
+<%- include('/partials/layout/_head.ejs', { title: 'Test page'}) %>
 
 <body>
   <div class="container">
@@ -17,9 +17,12 @@
       <h2>Pages</h2>
       <ul>
         <li><a href="/index.html">Start Page</a></li>
-        <li><a href="/test.html">Test Page</a></li>
       </ul>
     </div>
+    <div>
+      <%- include('/partials/test/_image.ejs') %>
+    </div>
+    <%- include('/partials/test/_bg-image.ejs') %>
   </div>
 </body>
 
