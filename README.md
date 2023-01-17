@@ -50,9 +50,14 @@
      - [sass-loader](https://www.npmjs.com/package/sass-loader)
 7. font & images
    - `npm i -D copy-webpack-plugin`
+   - [copy-webpack-plugin](https://webpack.js.org/plugins/copy-webpack-plugin/)
    - img folder with structure of
      - content images (not part of assets)
      - all other images
-8. 
+8. ìcons
+   - `npm i -D webfont-webpack-plugin`
+   - [webfont-webpack-plugin](https://www.npmjs.com/package/webfont-webpack-plugin)
+
+
 
 

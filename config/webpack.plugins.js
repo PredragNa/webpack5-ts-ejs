@@ -5,6 +5,7 @@ const glob = require('glob');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const WebfontPlugin = require('webfont-webpack-plugin').default;
 
 module.exports = (env) => {
   const isProduction = env.production;
@@ -47,15 +48,30 @@ module.exports = (env) => {
         globOptions: {
           ignore: [
             '**/img/content/**',
+            '**/img/font-icons/**',
           ]
         }
       },
     ],
   });
 
+  // Generating icons font for SVG files from src/img/icons to src/fonts/icons folder
+  // SCSS file can be found in src/stylesheets/base after build is complete
+  const webfontIcon = new WebfontPlugin({
+    files: path.resolve(__dirname, '../src/img/font-icons/*.svg'),
+    dest: path.resolve(__dirname, '../src/fonts/icons'),
+    destTemplate: path.resolve(__dirname, '../src/stylesheets/vendor'),
+    template: 'scss',
+    fontName: '_icons',
+    templateClassName: 'i',
+    templateFontPath: '../fonts/icons/',
+    normalize: true,
+  });
+
   return [
     ...(generateHTMLPlugins()),
     css,
-    // copyAssets,
+    copyAssets,
+    webfontIcon,
   ].filter(Boolean);
 };
