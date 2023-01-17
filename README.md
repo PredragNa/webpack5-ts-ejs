@@ -1,6 +1,6 @@
 # Webpack 5 TypeScript EJS starter
 
-*Note*: -  The `/` in our src or href attributes resolves to the root of our file system. This is the reason why  files will not work localy after you run `npm run build`. This build is made for server run on root direcotry.
+*Note*: -  The `/` in our src or href attributes resolves to the root of our file system. This is the reason why  files will not work localy after you run `npm run build`. This build is made for server run on root directory.
   -  src="/assets/js/main.js"
   -  href="/img/favicon.png"
 
