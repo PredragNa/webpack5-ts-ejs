@@ -7,10 +7,12 @@
     "start": "webpack serve --env development --config ./config/webpack.config.js",
     "build": "npm run clean:dist && webpack --env production --config ./config/webpack.config.js",
     "lint:styles": "stylelint \"src/**/*.scss\" --max-warnings=0",
+    "lint:styles-fix": "stylelint \"src/**/*.scss\" --fix",
     "lint:ejs": "npx ejslint **/*.ejs --max-warnings=0",
     "lint:ts": "eslint . --ext .ts --max-warnings=0",
     "lint:ts-fix": "eslint . --ext .ts --fix",
-    "clean:dist": "rimraf ./dist"
+    "clean:dist": "rimraf ./dist",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -50,7 +52,7 @@
     "glob": "^8.0.3",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "mini-css-extract-plugin": "^2.7.2",
     "postcss-loader": "^7.0.2",
     "sass": "^1.57.1",
